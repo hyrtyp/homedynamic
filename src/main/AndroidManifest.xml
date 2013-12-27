@@ -1,27 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.hyrt.cnp.homedynamic"
-    android:versionCode="1"
-    android:versionName="1.0" >
+    package="com.hyrt.cnp.homedynamic" >
 
-    <uses-sdk
-        android:minSdkVersion="7"
-        android:targetSdkVersion="17" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
+    <instrumentation
+        android:name="android.test.InstrumentationTestRunner"
+        android:targetPackage="com.hyrt.cnp.homedynamic"
+        android:label="Tests for com.hyrt.cnp.homedynamic" />
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme" >
+        <uses-library android:name="android.test.runner" />
         <activity
-            android:name="com.hyrt.cnp.homedynamic.MainActivity"
+            android:name="com.hyrt.cnp.homedynamic.HomedynamicActivity"
             android:label="@string/app_name" >
+
+        </activity>
+        <activity
+            android:name="com.hyrt.cnp.homedynamic.ui.GitHubListActivity"
+            android:label="@string/github">
+
+        </activity>
+        <activity
+            android:name="com.hyrt.cnp.homedynamic.ui.UserLoginActivity"
+            android:label="@string/userlogin">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <service
+            android:name="com.octo.android.robospice.JacksonSpringAndroidSpiceService"
+            android:exported="false" />
+        <service
+            android:name="com.octo.android.robospice.spicelist.BitmapSpiceService"
+            android:exported="false" />
     </application>
 
 </manifest>

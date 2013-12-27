@@ -1,17 +1,16 @@
 package com.hyrt.cnp.homedynamic;
 
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.os.Build;
 
-public class MainActivity extends ActionBarActivity {
+import com.hyrt.cnp.homedynamic.api.BaseActivity;
+
+public class HomedynamicActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
